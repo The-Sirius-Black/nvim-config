@@ -1,3 +1,4 @@
+-- lsp config 
 return {
     {
         "williamboman/mason.nvim",
@@ -22,18 +23,12 @@ return {
                 .set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
         end
     }, {
-        "mskelton/flutter.nvim",
-        dependencies = {"neovim/nvim-lspconfig"},
-        config = function()
-            require('flutter').setup({
-                closing_labels = {
-                    prefix = '==> ',
-                    highlight = 'Comment',
-                    enabled = true
+        'akinsho/flutter-tools.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+            config = function() require("flutter-tools").setup({}) end
+        }
 
-                },
-                hot_reload = true
-            })
-        end
     }
 }
