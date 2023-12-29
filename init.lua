@@ -14,9 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
--- Flutter snippets enable
-local luasnip = require("luasnip")
-luasnip.filetype_extend("dart", {"flutter"})
+
 
 local dap = require("dap")
 dap.defaults.dart.exception_breakpoints = {"Error", "Exception"}
