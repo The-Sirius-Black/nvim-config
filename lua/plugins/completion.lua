@@ -15,7 +15,6 @@ return {
 					-- enable flutter snippets
 					local luasnip = require("luasnip")
 					luasnip.filetype_extend("dart", { "flutter" })
-					luasnip.filetype_extend("go")
 				end,
 			},
 			{ "SmiteshP/nvim-navic" },
