@@ -2,16 +2,9 @@ return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		event = { "BufReadPre", "BufNewFile" },
-		-- cmd = "Mason",
-		-- branch = "v2.x",
 		dependencies = {
 			{ "neovim/nvim-lspconfig" },
-			{
-				"williamboman/mason.nvim",
-				build = function()
-					pcall(vim.cmd, "MasonUpdate")
-				end,
-			},
+			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
 
 			{ "hrsh7th/nvim-cmp" },
@@ -22,6 +15,7 @@ return {
 					-- enable flutter snippets
 					local luasnip = require("luasnip")
 					luasnip.filetype_extend("dart", { "flutter" })
+					luasnip.filetype_extend("go")
 				end,
 			},
 			{ "SmiteshP/nvim-navic" },
@@ -49,7 +43,6 @@ return {
 			lsp.setup()
 
 			local cmp = require("cmp")
-			-- local cmp_action = require('lsp-zero').cmp_action()
 
 			require("luasnip.loaders.from_vscode").lazy_load()
 
