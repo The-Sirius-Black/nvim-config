@@ -6,10 +6,12 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-                null_ls.builtins.diagnostics.trivy,
+				null_ls.builtins.diagnostics.trivy,
+				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.diagnostics.eslint,
 			},
 		})
 
 		vim.keymap.set("n", "<leader>fc", vim.lsp.buf.format, {})
 	end,
-    }
+}

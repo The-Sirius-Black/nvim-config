@@ -1,6 +1,7 @@
 return {
-    "startup-nvim/startup.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-    config = function() require("startup").setup({theme = "evil"}) end
-}
-
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.theta'.config)
+    end
+};
