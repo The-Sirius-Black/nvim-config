@@ -5,10 +5,14 @@ return {
 
 		null_ls.setup({
 			sources = {
+				-- lua
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.diagnostics.trivy,
+				-- js
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.diagnostics.eslint,
+				--python
+				null_ls.builtins.formatting.isort,
+				null_ls.builtins.formatting.black,
 			},
 		})
 
