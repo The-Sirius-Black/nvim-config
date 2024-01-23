@@ -1,5 +1,23 @@
 return {
 	{
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+			config = function()
+				require("flutter-tools").setup({
+					flutter_lookup_cmd = "C:/flutter/flutter/bin",
+					lsp = {
+						settings = {
+							lineLength = 120,
+						},
+					},
+				})
+				require("telescope").load_extension("flutter")
+			end,
+		},
+	},
+	{
 		"williamboman/mason.nvim",
 		lazy = false,
 		config = function()
@@ -26,7 +44,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.dartls.setup({
+			--[[			lspconfig.dartls.setup({
 				capabilities = capabilities,
 				settings = {
 					dart = {
@@ -34,7 +52,8 @@ return {
 					},
 				},
 			})
-
+            ]]
+			--
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
