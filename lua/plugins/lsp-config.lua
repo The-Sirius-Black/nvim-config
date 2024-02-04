@@ -32,7 +32,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				PATH = "prepend",
-				ensure_installed = { "lua_ls", "golangci_lint_ls", "tsserver" },
+				ensure_installed = { "lua_ls", "golangci_lint_ls", "tsserver", "clangd", "codelldb" },
 			})
 		end,
 	},
@@ -44,17 +44,11 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			--[[			lspconfig.dartls.setup({
-				capabilities = capabilities,
-				settings = {
-					dart = {
-						lineLength = 120,
-					},
-				},
-			})
-            ]]
-			--
 			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
 
