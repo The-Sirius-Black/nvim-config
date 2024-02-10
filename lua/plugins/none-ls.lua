@@ -13,9 +13,8 @@ return {
 				--python
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.formatting.black,
-				-- c++
-				null_ls.builtins.formatting.clang_format,
-				null_ls.builtins.formatting.cpplint,
+				--json
+				null_ls.builtins.formatting.jsonnetfmt,
 			},
 		})
 
