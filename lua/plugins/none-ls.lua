@@ -15,6 +15,8 @@ return {
 				null_ls.builtins.formatting.black,
 				--json
 				null_ls.builtins.formatting.jsonnetfmt,
+				--C
+				null_ls.builtins.formatting.clang_format,
 			},
 		})
 
