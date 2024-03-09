@@ -1,66 +1,66 @@
 -- to preview keymappings run :lua Cheatsheet()
 
 local content = [[
-┌──────┬──────────────┬────────── DEBUGGER ─────────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'n'  │ <leader>hr   │ hotReload                                                       │
-│ 'n'  │ <leader>re   │ hotRestart                                                      │
-│ 'n'  │ <leader>dc   │ DapContinue                                                     │
-│ 'n'  │ <leader>dx   │ DapTerminate                                                    │
-│ 'n'  │ <leader>do   │ DapStepOver                                                     │
-│ 'n'  │ <leader>dt   │ DapToggleBreakpoint                                             │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬────────── DEBUGGER ─────────────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <leader>hr   │ hotReload                                                       │
+│   n   │ <leader>re   │ hotRestart                                                      │
+│   n   │ <leader>dc   │ DapContinue                                                     │
+│   n   │ <leader>dx   │ DapTerminate                                                    │
+│   n   │ <leader>do   │ DapStepOver                                                     │
+│   n   │ <leader>dt   │ DapToggleBreakpoint                                             │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
-┌──────┬──────────────┬─────────── HARPOON  ────────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'n'  │ <leader>h    │ harpoon_mark.add_file                                           │
-│ 'n'  │ <C─h>        │ harpoon_ui.toggle_quick_menu                                    │
-│ 'n'  │ <leader>1─9  │ harpoon_ui.nav_file(1 ─ 9)                                      │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬─────────── HARPOON  ────────────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <leader>h    │ harpoon_mark.add_file                                           │
+│   n   │ <C─h>        │ harpoon_ui.toggle_quick_menu                                    │
+│   n   │ <leader>1─9  │ harpoon_ui.nav_file(1 ─ 9)                                      │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
-┌──────┬──────────────┬──────────── SEARCH ─────────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'n'  │ <leader>ff   │ find_files                                                      │
-│ 'n'  │ <leader>fg   │ live_grep                                                       │
-│ 'n'  │ <leader>cs   │ nohlsearch                                                      │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬──────────── SEARCH ─────────────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <leader>ff   │ find_files                                                      │
+│   n   │ <leader>fg   │ live_grep                                                       │
+│   n   │ <leader>cs   │ nohlsearch                                                      │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
-┌──────┬──────────────┬──────────── AUTOCOMPLETE────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'i'  │ <C─b>        │ cmp.mappings.scroll_docs(─4)                                    │
-│ 'i'  │ <C─f>        │ cmp.mappings.scroll_docs(4)                                     │
-│ 'i'  │ <C─Space>    │ cmp.mapping.complete                                            │
-│ 'i'  │ <C─e>        │ cmp.mappng.abort                                                │
-│ 'i'  │ <CR>         │ cmp.mapping.confirm({select = true})                            │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬──────────── AUTOCOMPLETE ───────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   i   │ <C─b>        │ cmp.mappings.scroll_docs(─4)                                    │
+│   i   │ <C─f>        │ cmp.mappings.scroll_docs(4)                                     │
+│   i   │ <C─Space>    │ cmp.mapping.complete                                            │
+│   i   │ <C─e>        │ cmp.mappng.abort                                                │
+│   i   │ <CR>         │ cmp.mapping.confirm({select = true})                            │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
-┌──────┬──────────────┬──────────── FLUTTER ────────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'n'  │ <leader>far  │ run_flutter_tools                                               │
-│ 'n'  │ <leader>fr   │ flutter_hot_reload                                              │
-│ 'n'  │ <leader>ffr  │ flutter_hot_restart                                             │
-│ 'n'  │ <leader>faq  │ flutter_quit_app()                                              │
-│ 'n'  │ <leader>fe   │ show_flutter_emulators                                          │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬──────────── FLUTTER ────────────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <leader>far  │ run_flutter_tools                                               │
+│   n   │ <leader>fr   │ flutter_hot_reload                                              │
+│   n   │ <leader>ffr  │ flutter_hot_restart                                             │
+│   n   │ <leader>faq  │ flutter_quit_app()                                              │
+│   n   │ <leader>fe   │ show_flutter_emulators                                          │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
-┌──────┬──────────────┬──────────── OTHER ──────────────────────────────────────────────┐
-│ Mode │ Keys         │ Action                                                          │
-├──────┼──────────────┼─────────────────────────────────────────────────────────────────┤
-│ 'n'  │ <C─s>        │ :w                                                              │
-│ 'n'  │ <C─a>        │ :wa                                                             │
-│ 'n'  │ <Leader>sh   │ OpenDefaultShell                                                │
-│ 'n'  │ <C─o>        │ SymbolsOutlineOpen                                              │
-│ 'n'  │ <leader>fc   │ vim.lsp.buf.format                                              │
-│ 'n'  │ <leader>th   │ Gitsigns preview_hunk                                           │
-│ 'n'  │ <C─o>        │ Gitsigns toggle_current_line_blame                              │
-│ 'n'  │ <C─o>        │ SymbolsOutlineOpen                                              │
-│ 'n'  │ <C─o>        │ SymbolsOutlineOpen                                              │
-└──────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+┌───────┬──────────────┬──────────── OTHER ──────────────────────────────────────────────┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <C─s>        │ :w                                                              │
+│   n   │ <C─a>        │ :wa                                                             │
+│   n   │ <Leader>sh   │ OpenDefaultShell                                                │
+│   n   │ <C─o>        │ SymbolsOutlineOpen                                              │
+│   n   │ <leader>fc   │ vim.lsp.buf.format                                              │
+│   n   │ <leader>th   │ Gitsigns preview_hunk                                           │
+│   n   │ <leader>tb   │ Gitsigns toggle_current_line_blame                              │
+│ n,v,i │ <F1>         │ set relativenumber                                              │
+│ n,v,i │ <F2>         │ set norelativenumber                                            │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
 
 ┌────────────────────────────────── DEFAULTS ───────────────────────────────────────────┐
 │ set expandtab                                                                         │
@@ -74,7 +74,7 @@ local content = [[
 └───────────────────────────────────────────────────────────────────────────────────────┘
 ]]
 
-local width_percent = 0.3505
+local width_percent = 0.355
 local height_percent = 0.8
 
 local lines = {}
@@ -104,6 +104,7 @@ end
 
 function Cheatsheet()
 	local width, height = getSize()
+  print(width, height)
 	local cols, rows = getWindowCenter()
 	local buf = vim.api.nvim_create_buf(false, true)
 
