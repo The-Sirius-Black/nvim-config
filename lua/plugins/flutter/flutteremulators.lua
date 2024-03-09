@@ -16,15 +16,12 @@ function get_flutter_emulators()
   for line in emulators_list:gmatch("[^\r\n]+") do
     local id, name, type, platform = line:match("([^•]+)•%s*([^•]+)•%s*([^•]+)•%s*([^•]+)")
     if id and name and type and platform then
-      table.insert(
-        emulators,
-        {
-          id = id:match("%S+"),
-          name = name:match("%s*(.+)%s*"),
-          type = type:match("%s*(.+)%s*"),
-          platform = platform:match("%s*(.+)%s*"),
-        }
-      )
+      table.insert(emulators, {
+        id = id:match("%S+"),
+        name = name:match("%s*(.+)%s*"),
+        type = type:match("%s*(.+)%s*"),
+        platform = platform:match("%s*(.+)%s*"),
+      })
     end
   end
 

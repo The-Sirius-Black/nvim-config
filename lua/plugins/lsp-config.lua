@@ -5,6 +5,12 @@ end
 
 return {
 	{
+		"simrat39/rust-tools.nvim",
+		config = function()
+			require("rust-tools").setup({})
+		end,
+	},
+	{
 		"williamboman/mason.nvim",
 		lazy = false,
 		config = function()
@@ -26,7 +32,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
-
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -34,6 +39,7 @@ return {
 			if is_dart_project() then
 				lspconfig.dartls.setup({
 					capabilities = capabilities,
+					filetypes = { "dart" },
 					settings = {
 						dart = {
 							lineLength = 120,
@@ -42,28 +48,39 @@ return {
 				})
 			end
 
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+				filetypes = { "rust" },
+			})
+
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
+				filetypes = { "json", "jsonc" },
 			})
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				filetypes = { "lua" },
 			})
 
 			lspconfig.html.setup({
 				capabilities = capabilities,
+				filetypes = { "html" },
 			})
 
 			lspconfig.golangci_lint_ls.setup({
 				capabilities = capabilities,
+				filetypes = { "go" },
 			})
 
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
+				filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 			})
 
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
+				filetypes = { "c", "cpp" },
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

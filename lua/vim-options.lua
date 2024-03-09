@@ -47,6 +47,3 @@ vim.api.nvim_set_keymap("n", "<leader>fe", ":lua show_flutter_emulators()<CR>", 
 
 -- Clear search
 vim.api.nvim_set_keymap("n", "<leader>cs", ":nohlsearch<CR>", {})
-
-
-

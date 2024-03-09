@@ -16,4 +16,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("plugins.flutter.flutter")
+require("plugins.cheatsheet.cheatsheet")
 require("lazy").setup("plugins")
