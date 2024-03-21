@@ -41,12 +41,26 @@ local content = [[
 ┌───────┬──────────────┬─────────────────────────────────────────────────────── FLUTTER ─┐
 │ Mode  │ Keys         │ Action                                                          │
 ├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <C-b>        │ build_runner_run                                                │
+│   n   │ <C-g>        │ gen_localizations                                               │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
 │   n   │ <leader>far  │ run_flutter_tools                                               │
 │   n   │ <leader>fr   │ flutter_hot_reload                                              │
 │   n   │ <leader>ffr  │ flutter_hot_restart                                             │
-│   n   │ <leader>faq  │ flutter_quit_app()                                              │
+│   n   │ <leader>faq  │ flutter_quit_app                                                │
 │   n   │ <leader>fe   │ show_flutter_emulators                                          │
 └───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+
+┌───────┬──────────────┬─────────────────────────────────────────────────────────── LSP ─┐
+│ Mode  │ Keys         │ Action                                                          │
+├───────┼──────────────┼─────────────────────────────────────────────────────────────────┤
+│   n   │ <K>          │ vim.lsp.buf.hover                                               │
+│   n   │ <leader>gd   │ vim.lsp.buf.definition                                          │
+│ n,v   │ <leader>ca   │ vim.lsp.buf.code_action                                         │
+│   n   │ <leader>rn   │ vim.lsp.buf.rename                                              │
+│   n   │ <leader>gr   │ vim.lsp.buf.references                                          │
+└───────┴──────────────┴─────────────────────────────────────────────────────────────────┘
+
 
 ┌───────┬──────────────┬───────────────────────────────────────────────────────── OTHER ─┐
 │ Mode  │ Keys         │ Action                                                          │
@@ -79,50 +93,49 @@ local height_percent = 0.95
 
 local lines = {}
 for line in content:gmatch("[^\r\n]+") do
-	table.insert(lines, line)
+  table.insert(lines, line)
 end
 
 local function getSize()
-	local width = 90
-	local height = 65
-	return width, height
+  local width = 90
+  local height = 65
+  return width, height
 end
 
 local function getWindowCenter()
-	local rows = vim.api.nvim_get_option("lines")
-	local cols = vim.api.nvim_get_option("columns")
+  local rows = vim.api.nvim_get_option("lines")
+  local cols = vim.api.nvim_get_option("columns")
 
-	local width = math.floor(cols * width_percent)
-	local height = math.floor(rows * height_percent)
+  local width = math.floor(cols * width_percent)
+  local height = math.floor(rows * height_percent)
 
-	local y = math.floor((rows - height) / 2)
-	local x = math.floor((cols - width) / 2)
+  local y = math.floor((rows - height) / 2)
+  local x = math.floor((cols - width) / 2)
 
-	return x, y
+  return x, y
 end
 
 function Cheatsheet()
-	local width, height = getSize()
-  print(width, height)
-	local cols, rows = getWindowCenter()
-	local buf = vim.api.nvim_create_buf(false, true)
+  local width, height = getSize()
+  local cols, rows = getWindowCenter()
+  local buf = vim.api.nvim_create_buf(false, true)
 
-	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-	vim.api.nvim_buf_set_option(buf, "modifiable", false)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+  vim.api.nvim_buf_set_option(buf, "modifiable", false)
 
-	local opts = {
-		relative = "editor",
-		width = width,
-		height = height,
-		col = cols,
-		row = rows,
-		border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-	}
+  local opts = {
+    relative = "editor",
+    width = width,
+    height = height,
+    col = cols,
+    row = rows,
+    border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+  }
 
-	local win = vim.api.nvim_open_win(buf, true, opts)
+  local win = vim.api.nvim_open_win(buf, true, opts)
 
-	vim.api.nvim_win_set_option(win, "relativenumber", false)
-	vim.api.nvim_win_set_option(win, "number", false)
-	vim.api.nvim_win_set_option(win, "colorcolumn", "")
-	vim.api.nvim_win_set_option(win, "winhl", "Normal:Normal")
+  vim.api.nvim_win_set_option(win, "relativenumber", false)
+  vim.api.nvim_win_set_option(win, "number", false)
+  vim.api.nvim_win_set_option(win, "colorcolumn", "")
+  vim.api.nvim_win_set_option(win, "winhl", "Normal:Normal")
 end

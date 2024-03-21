@@ -18,8 +18,8 @@ vim.keymap.set({ "n", "v", "i" }, "<Left>", "<NOP>", {})
 vim.keymap.set({ "n", "v", "i" }, "<Right>", "<NOP>", {})
 
 function OpenDefaultShell()
-	vim.cmd("set splitright")
-	vim.cmd(":vsplit | term")
+  vim.cmd("set splitright")
+  vim.cmd(":vsplit | term")
 end
 
 vim.api.nvim_set_keymap("n", "<Leader>sh", ":lua OpenDefaultShell()<CR>", { noremap = true, silent = true })
@@ -28,21 +28,35 @@ vim.api.nvim_set_keymap("n", "<Leader>sh", ":lua OpenDefaultShell()<CR>", { nore
 
 -- Command to trigger running all Flutter tools
 vim.api.nvim_set_keymap("n", "<leader>far", ":lua run_flutter_tools()<CR>", {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 })
+
 vim.api.nvim_set_keymap("n", "<leader>fr", ":lua flutter_hot_reload()<CR>", {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 })
+
+vim.api.nvim_set_keymap("n", "<C-g>", ":lua gen_localizations()<CR>", {
+  noremap = true,
+  silent = true,
+})
+
+vim.api.nvim_set_keymap("n", "<C-b>", ":lua build_runner_run()<CR>", {
+  noremap = true,
+  silent = true,
+})
+
 vim.api.nvim_set_keymap("n", "<leader>ffr", ":lua flutter_hot_restart()<CR>", {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 })
+
 vim.api.nvim_set_keymap("n", "<leader>faq", ":lua flutter_quit_app()<CR>", {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 })
+
 vim.api.nvim_set_keymap("n", "<leader>fe", ":lua show_flutter_emulators()<CR>", { noremap = true, silent = true })
 
 -- Clear search

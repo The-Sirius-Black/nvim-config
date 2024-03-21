@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "buf",
-        "nvim_create_buf"
+        "nvim_create_buf",
+        "vim"
     ]
 }

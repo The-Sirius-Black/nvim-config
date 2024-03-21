@@ -2,6 +2,10 @@
 -- Function to run shell commands
 function run_shell_command(command)
   local handle = io.popen(command)
+  if handle == nil then
+    print("Error running command: " .. command)
+    return
+  end
   local result = handle:read("*a")
   handle:close()
   return result

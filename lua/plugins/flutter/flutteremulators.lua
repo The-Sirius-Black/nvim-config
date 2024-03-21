@@ -3,6 +3,10 @@
 -- Function to run shell commands
 function run_shell_command(command)
   local handle = io.popen(command)
+  if handle == nil then
+    print("Error running command: " .. command)
+    return
+  end
   local result = handle:read("*a")
   handle:close()
   return result
@@ -11,6 +15,9 @@ end
 -- Function to get a list of available Flutter emulators
 function get_flutter_emulators()
   local emulators_list = run_shell_command("flutter emulators")
+  if emulators_list == nil then
+    return {}
+  end
   local emulators = {}
 
   for line in emulators_list:gmatch("[^\r\n]+") do
