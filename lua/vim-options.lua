@@ -10,7 +10,7 @@ vim.keymap.set("n", "<C-s>", ":w<CR>", {})
 vim.keymap.set("n", "<C-a>", ":wa<CR>", {})
 vim.keymap.set({ "n", "v", "i" }, "<F1>", ":set relativenumber<CR>", {})
 vim.keymap.set({ "n", "v", "i" }, "<F2>", ":set norelativenumber<CR>", {})
-
+vim.keymap.set({ "v", }, "<C-c>", "\"+y", { noremap = true, silent = true })
 --disable arrows
 vim.keymap.set({ "n", "v", "i" }, "<Up>", "<NOP>", {})
 vim.keymap.set({ "n", "v", "i" }, "<Down>", "<NOP>", {})
